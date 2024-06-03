@@ -8,13 +8,13 @@
             "name": "Dart & Flutter",
             "request": "launch",
             "type": "dart",
-            "program": "./Dart/linked_list.dart"
+            "program": "./LinkedList/Dart/ll_partition_list.dart"
         },
         {
             "name": "Python",
             "request": "launch",
             "type": "debugpy",
-            "program": "./Python/linked_list.py"
+            "program": "./LinkedList/Python/linked_list.py"
         }
     ]
 }

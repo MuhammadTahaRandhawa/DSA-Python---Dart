@@ -52,17 +52,100 @@ class LinkedList {
         pre = temp;
         temp = temp.next!;
       }
-      print(
-        'node ${pre.value}',
-      );
-      print(
-        'node ${temp.value}',
-      );
+
       pre.next = null;
       tail = pre;
       length--;
       return true;
     }
+  }
+
+  //prepend listf
+  void insertAtStart(dynamic value) {
+    if (length == 0) {
+      LinkedList(value);
+    } else {
+      Node newHead = Node(value);
+      newHead.next = head;
+      head = newHead;
+      length++;
+    }
+  }
+
+  bool popFirst() {
+    if (length == 0) {
+      return false;
+    }
+    Node? newHead = head!.next;
+    head = newHead;
+    length--;
+    return true;
+  }
+
+  Node? getNode(int index) {
+    if (length == 0 || index + 1 > length || index < 0) {
+      return null;
+    }
+    // else if (index == 1) {
+    //   return head;
+    //}
+    else {
+      Node temp = head!;
+      for (int i = 0; i < index; i++) {
+        temp = temp.next!;
+      }
+      return temp;
+    }
+  }
+
+  bool setIndex(dynamic value, int index) {
+    Node? node = getNode(index);
+    if (node != null) {
+      node.value = value;
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  bool insertAtIndex(dynamic value, int index) {
+    if (index < 0 || index > length) {
+      return false;
+    }
+    if (index == 0) {
+      insertAtStart(value);
+    } else if (index == length) {
+      push(value);
+    } else {
+      Node node = Node(value);
+      Node temp = head!;
+      for (var i = 0; i < index - 1; i++) {
+        temp = temp.next!;
+      }
+      node.next = temp.next;
+      temp.next = node;
+    }
+    return true;
+  }
+
+  bool removeItem(int index) {
+    if (index < 0 || index >= length) {
+      return false;
+    }
+    if (index == 0) {
+      popFirst();
+    } else if (index == length - 1) {
+      pop();
+    } else {
+      Node temp = head!;
+      for (int i = 0; i < index - 1; i++) {
+        temp = temp.next!;
+      }
+      Node removed = temp.next!;
+      Node? next = removed.next;
+      temp.next = next;
+    }
+    return true;
   }
 }
 
@@ -71,6 +154,6 @@ void main() {
   myLinkedList.push(5);
   myLinkedList.push(10);
   myLinkedList.push(20);
-  myLinkedList.pop();
+  myLinkedList.removeItem(3);
   myLinkedList.printList();
 }
