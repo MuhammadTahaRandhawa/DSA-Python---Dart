@@ -8,7 +8,7 @@
             "name": "Dart & Flutter",
             "request": "launch",
             "type": "dart",
-            "program": "./Stack/Dart/stack.dart"
+            "program": "./Queue/Dart/queue.dart"
         },
         {
             "name": "Python",
