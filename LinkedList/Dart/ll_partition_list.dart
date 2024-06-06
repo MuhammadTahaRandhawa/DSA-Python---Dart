@@ -9,12 +9,19 @@
 //     if (head == null) {
 //       return null;
 //     } else {
-//       ListNode a = head;
-//       ListNode? b;
+//       ListNode? greaterOrEqual;
+//       ListNode? less;
+//       if(head.val >= x){
+//         greaterOrEqual = head;
+//       }
+//       else{
+//         less = head;
+//       }
 //       ListNode temp = head;
 //       while (temp.next != null) {
-//         if (temp.val <= x) {
-//           a.next = 
+//         temp = temp.next!;
+//         if (temp.val >= x) {
+//           greaterOrEqual == n
 //         }
 //       }
 //     }

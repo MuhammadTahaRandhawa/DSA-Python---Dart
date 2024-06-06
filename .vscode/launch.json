@@ -8,7 +8,7 @@
             "name": "Dart & Flutter",
             "request": "launch",
             "type": "dart",
-            "program": "./LinkedList/Dart/ll_partition_list.dart"
+            "program": "./Stack/Dart/stack.dart"
         },
         {
             "name": "Python",
