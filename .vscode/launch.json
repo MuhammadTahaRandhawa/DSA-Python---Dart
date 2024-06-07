@@ -8,7 +8,7 @@
             "name": "Dart & Flutter",
             "request": "launch",
             "type": "dart",
-            "program": "./Queue/Dart/queue.dart"
+            "program": "./BinarySearchTree/dart/binary_search_tree.dart"
         },
         {
             "name": "Python",
