@@ -37,6 +37,23 @@ class BinarySearchTree {
       }
     }
   }
+
+  bool contains(dynamic value) {
+    if (root == null) {
+      return false;
+    }
+    Node? temp = root;
+    while (temp != null) {
+      if (value == temp.value) {
+        return true;
+      } else if (value < temp.value) {
+        temp = temp.left;
+      } else {
+        temp = temp.right;
+      }
+    }
+    return false;
+  }
 }
 
 void main(List<String> args) {
@@ -48,4 +65,5 @@ void main(List<String> args) {
   print(binarySearchTree.root!.value);
   print(binarySearchTree.root!.left!.value);
   print(binarySearchTree.root!.right!.value);
+  print(binarySearchTree.contains(6));
 }
